@@ -2,7 +2,7 @@ const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 
 const myPeer = new Peer({
-  config: {'iceServers': JSON.parse(ice)} /* Sample servers, please use appropriate ones */
+  config: {'iceServers': JSON.parse(ice.replace(/&#34;/gi, '"'))} /* Sample servers, please use appropriate ones */
 });
 
 
