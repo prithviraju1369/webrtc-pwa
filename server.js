@@ -9,6 +9,7 @@ const client = require('twilio')(accountSid, authToken);
 let ice;
 
 client.tokens.create().then(token => {
+  console.log(token);
   ice = token.ice_servers;
 }).catch(err => console.log(err));
 
