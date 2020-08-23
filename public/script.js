@@ -3,7 +3,6 @@ const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined);
 const myVideo = document.createElement('video')
 myVideo.muted = true
-myVideo.playsinline = true
 const peers = {}
 navigator.mediaDevices.getUserMedia({
   video: true,
@@ -47,6 +46,7 @@ function connectToNewUser(userId, stream) {
 
 function addVideoStream(video, stream) {
   video.srcObject = stream
+  video.playsinline = true
   video.addEventListener('loadedmetadata', () => {
     video.play()
   })
