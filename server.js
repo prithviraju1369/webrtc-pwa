@@ -3,8 +3,8 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
-const accountSid = 'AC900f312d7c8c03795bed74f617c39164';
-const authToken = 'a367b6d90b9d481793001e6cfe7b99d0';
+const accountSid = 'AC8567f370ce182917f4ff253b07e9a303';
+const authToken = '09b33573a85c9dd06d762463ae0515b0';
 const client = require('twilio')(accountSid, authToken);
 let ice;
 
