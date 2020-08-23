@@ -3,6 +3,14 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
+const accountSid = 'AC8567f370ce182917f4ff253b07e9a303';
+const authToken = 'test123';
+const client = require('twilio')(accountSid, authToken);
+let ice;
+
+client.tokens.create().then(token => {
+  ice = token.ice_servers;
+}).catch(err => console.log(err));
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
