@@ -10,7 +10,7 @@ let ice;
 
 client.tokens.create().then(token => {
   console.log(token);
-  ice = token.ice_servers;
+  ice = token.iceServers;
 }).catch(err => console.log(err));
 
 app.set('view engine', 'ejs')
