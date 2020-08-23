@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:room', (req, res) => {
-  res.render('room', { roomId: req.params.room, ice: JSON.stringify(ice) })
+  res.render('room', { roomId: req.params.room, ice: ice })
 })
 
 io.on('connection', socket => {
