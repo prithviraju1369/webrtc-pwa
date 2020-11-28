@@ -4,7 +4,7 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
 const accountSid = 'AC08cd9d05bafa28d53b18c51a99c239c1';
-const authToken = '8f47c9478edd82574831bdd0b9eb7542';
+const authToken = '44cff501ad82c480c7685e1c8f528f6b';
 const client = require('twilio')(accountSid, authToken);
 let ice;
 
