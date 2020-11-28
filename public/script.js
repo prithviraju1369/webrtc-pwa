@@ -8,6 +8,7 @@ const myPeer = new Peer({
 
 
 const myVideo = document.createElement('video')
+myVideo.classList.add("local-user");
 myVideo.muted = true
 const peers = {}
 navigator.mediaDevices.getUserMedia({
@@ -40,6 +41,7 @@ myPeer.on('open', id => {
 function connectToNewUser(userId, stream) {
   const call = myPeer.call(userId, stream)
   const video = document.createElement('video')
+  video.classList.add("remote-user");
   call.on('stream', userVideoStream => {
     addVideoStream(video, userVideoStream)
   })
